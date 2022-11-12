@@ -24,4 +24,4 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 
 **Sprints Activity Reports:**
 
-[Sprint 1 (31.10.2022 - 6.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Echipa%203%20Raport%20obiective%20implementate%20Sprint%201.pdf))
+[Sprint 1 (31.10.2022 - 6.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Echipa%203%20Raport%20obiective%20implementate%20Sprint%201.pdf)
