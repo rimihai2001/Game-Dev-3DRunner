@@ -4,9 +4,9 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 
 **Team Members:**
 
-[Manole Patricia-Theodora **(Team Leader)**](https://github.com/PatriciaManole)
+[Manole Patricia-Theodora](https://github.com/PatriciaManole) **(Team Leader)**
 
-[Mihai Radu-Ioan **(Senior Coder)**](https://github.com/rimihai2001)
+[Mihai Radu-Ioan](https://github.com/rimihai2001) **(Senior Coder)**
 
 [Fritz Raluca-Mihaela](https://github.com/ralucafritz)
 
