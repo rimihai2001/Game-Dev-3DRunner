@@ -24,10 +24,12 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 **Sprints Code:**
 
 [Sprint 1 (31.10.2022 - 6.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/tree/f0d52ef21b7580fc60947dc31c3be8ec410ec677)
+
 Sprint 2 (7.11.2022 - 20.11.2022) - **In progress**
 
 
 **Sprints Activity Reports:**
 
 [Sprint 1 (31.10.2022 - 6.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Echipa%203%20Raport%20obiective%20implementate%20Sprint%201.pdf)
+
 Sprint 2 (7.11.2022 - 20.11.2022) - **In progress**
