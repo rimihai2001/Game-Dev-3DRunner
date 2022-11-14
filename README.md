@@ -2,6 +2,9 @@
 
 Developed by Team No. 3 for the Introduction in Game Development Course.
 
+**Objectives:**
+[Trello Project Board] (https://trello.com/b/WVgVTL46/race-against-time)
+
 **Team Members:**
 
 [Manole Patricia-Theodora](https://github.com/PatriciaManole) **(Team Leader)**
