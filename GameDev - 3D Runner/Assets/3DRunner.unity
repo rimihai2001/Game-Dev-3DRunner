@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 1857859492}
   - component: {fileID: 1857859496}
   - component: {fileID: 1857859497}
+  - component: {fileID: 1857859498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -837,9 +838,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1857859496}
+  pm: {fileID: 0}
   forwardForce: 500
   sidewayForce: 500
   jumpForce: 5
+--- !u!114 &1857859498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857859491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73b9beb54396f34b8843c6aad8d195b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pm: {fileID: 1857859497}
 --- !u!1 &1945547803
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +892,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.17009863, g: 0.6037736, b: 0.09910998, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -938,6 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  pm: {fileID: 0}
   forwardForce: 5000
   sidewayForce: 500
   jumpForce: 500
