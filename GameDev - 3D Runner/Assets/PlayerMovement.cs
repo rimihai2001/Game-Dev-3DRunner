@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 100f;
 
     //Bool variable that says if the player is or is not touching the ground surface
-    private bool playerOnGround = true;
+    private bool playerOnGround = false;
     
 
 
