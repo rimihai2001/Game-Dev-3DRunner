@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0);
         }
 
-        //Jump activated by "W" key if the player is on the ground
-        if (Input.GetKey("w") && playerOnGround)
+        //Jump activated by "W" or"SPACE" key if the player is on the ground
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey("w")) && playerOnGround)
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
