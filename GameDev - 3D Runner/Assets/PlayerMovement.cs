@@ -6,12 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     //Rigidbody variable to be assigned to an object
     public Rigidbody rb;
-    public PlayerMovement pm;
 
     //Varibles declared public so they can be changed from the Unity frontend instead of changing directly into the code
     public float forwardForce = 1000f;
     public float sidewayForce = 500f;
     public float jumpForce = 100f;
+
+    //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = true;
     
 
@@ -41,24 +42,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Function that detects if the player is on the ground and changes the variable value to true
+    //Function that detects when the player enter in a collision
     void OnCollisionEnter(Collision collision)
     {
-        
+        //If statement that detects if the player is on the ground and changes the variable value to true
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = true;
         }
-        /*else if (collision.gameObject.name == "Game Over Block")
-        {
-            pm.enabled = false;
-            Debug.Log("GAME OVER!");
-        }*/
+        
     }
 
-    //Function that detects if the player is not on the ground anymore and changes the variable accordingly
+    //Function that detects when the player exit a collision
     void OnCollisionExit(Collision collision)
     {
+        //If statement that detects if the player is not on the ground anymore and changes the variable accordingly
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = false;
