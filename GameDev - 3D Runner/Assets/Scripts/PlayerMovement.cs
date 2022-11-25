@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = true;
+            Debug.Log("On ground");
         }
         
     }
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = false;
+            Debug.Log("NOT ON ground");
         }
     }
 
