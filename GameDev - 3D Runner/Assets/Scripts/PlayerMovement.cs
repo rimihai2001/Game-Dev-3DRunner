@@ -14,8 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = false;
-    
-
 
     //Update function that is called once per frame
     void FixedUpdate()
@@ -49,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = true;
-            Debug.Log("On ground");
+            //Debug.Log("On ground");
         }
         
     }
@@ -61,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = false;
-            Debug.Log("NOT ON ground");
+            //Debug.Log("NOT ON ground");
         }
     }
 
