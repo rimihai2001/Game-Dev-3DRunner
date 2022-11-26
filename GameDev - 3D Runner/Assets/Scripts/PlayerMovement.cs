@@ -16,27 +16,29 @@ public class PlayerMovement : MonoBehaviour
     private bool playerOnGround = false;
 
     //Update function that is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //Constant forward force activated per frame
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
-        
+
         //Right force that is activated per frame when the user is pressing the "D" key
-        if(Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(sidewayForce * Time.deltaTime, 0, 0);
         }
 
         //Left force that is activated per frame when the user is pressing the "A" key
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0);
         }
 
         //Jump activated by "W" or"SPACE" key if the player is on the ground
-        if ((Input.GetKey(KeyCode.Space) || Input.GetKey("w")) && playerOnGround)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("w")) && playerOnGround)
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            playerOnGround = false;
+            //Debug.Log("NOT ON ground");
         }
     }
 
@@ -48,18 +50,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerOnGround = true;
             //Debug.Log("On ground");
-        }
-        
-    }
-
-    //Function that detects when the player exit a collision
-    void OnCollisionExit(Collision collision)
-    {
-        //If statement that detects if the player is not on the ground anymore and changes the variable accordingly
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            playerOnGround = false;
-            //Debug.Log("NOT ON ground");
         }
     }
 
