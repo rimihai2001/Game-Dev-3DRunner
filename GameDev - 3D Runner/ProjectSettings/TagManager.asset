@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - GameOverObstacle
+  - OutOfBounds
+  - InBounds
   layers:
   - Default
   - TransparentFX
