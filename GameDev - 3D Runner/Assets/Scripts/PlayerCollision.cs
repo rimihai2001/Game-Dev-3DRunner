@@ -13,6 +13,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.gameObject.tag == "GameOverObstacle")
         {
             pm.enabled = false;
+            PlayerManager.gameOver = true;
             Debug.Log("GAME OVER!");
         }
     }

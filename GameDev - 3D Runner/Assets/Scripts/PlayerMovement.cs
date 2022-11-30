@@ -25,12 +25,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(sidewayForce * Time.deltaTime, 0, 0);
+            checkGameStart();
         }
 
         //Left force that is activated per frame when the user is pressing the "A" key
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0);
+            checkGameStart();
         }
 
         //Jump activated by "W" or"SPACE" key if the player is on the ground
@@ -38,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             playerOnGround = false;
+            checkGameStart();
             //Debug.Log("NOT ON ground");
         }
+
+
     }
 
     //Function that detects when the player enter in a collision
@@ -52,5 +57,14 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("On ground");
         }
     }
+
+    void checkGameStart()
+    {
+        if(PlayerManager.gameStart == true)
+        {
+            PlayerManager.gameStart = false;
+        }
+    }
+
 
 }
