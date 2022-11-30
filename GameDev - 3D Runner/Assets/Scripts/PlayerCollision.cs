@@ -13,8 +13,9 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.gameObject.tag == "GameOverObstacle")
         {
             pm.enabled = false;
+            // change value of gameOver bool to True in order for the GameOverPanel to be visible
             PlayerManager.gameOver = true;
-            Debug.Log("GAME OVER!");
+            // Debug.Log("GAME OVER!");
         }
     }
 }
