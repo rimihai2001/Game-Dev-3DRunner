@@ -58,11 +58,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Function that checks if the game started or not
     void checkGameStart()
     {
-        if(PlayerManager.gameStart == true)
+        if(PlayerManager.gameStart == false)
         {
-            PlayerManager.gameStart = false;
+            PlayerManager.gameStart = true;
         }
     }
 

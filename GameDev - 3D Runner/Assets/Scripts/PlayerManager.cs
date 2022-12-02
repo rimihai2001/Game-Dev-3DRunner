@@ -7,16 +7,19 @@ public class PlayerManager : MonoBehaviour
 
     // Variable used to determine if the game is over or not.
     public static bool gameOver;
+    // Variable used to determine if the game started or not.
     public static bool gameStart;
     // Variable used for the GameOverPanel
     public GameObject gameOverPanel;
+    // Variable used for the GameStartPanel
     public GameObject gameStartPanel;
 
     void Start()
     {
         // Initializing the bool variable with false
         gameOver = false;
-        gameStart = true;
+        // Initializing the bool variable with false
+        gameStart = false;
     }
 
 //     // Update is called once per frame
@@ -28,8 +31,8 @@ public class PlayerManager : MonoBehaviour
             Time.timeScale = 0;
             gameOverPanel.SetActive(true);
         }
-
-        if(!gameStart)
+        // If the game started (true) the time stops and the GameOverPanel becomes active
+        if(gameStart)
         {
             gameStartPanel.SetActive(false);
         }
