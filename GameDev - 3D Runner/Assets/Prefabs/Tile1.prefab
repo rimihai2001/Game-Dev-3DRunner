@@ -275,6 +275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block 1
       objectReference: {fileID: 0}
+    - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
+      propertyPath: m_TagString
+      value: GameOverObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6234032997137967035, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -357,6 +361,10 @@ PrefabInstance:
     - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_Name
       value: Block 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
+      propertyPath: m_TagString
+      value: GameOverObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6234032997137967035, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_RootOrder
@@ -441,6 +449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block 5
       objectReference: {fileID: 0}
+    - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
+      propertyPath: m_TagString
+      value: GameOverObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6234032997137967035, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -524,6 +536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block 3
       objectReference: {fileID: 0}
+    - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
+      propertyPath: m_TagString
+      value: GameOverObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6234032997137967035, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -606,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_Name
       value: Block 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 125579666552796535, guid: b522beff92c2c1644878086af63513c1, type: 3}
+      propertyPath: m_TagString
+      value: GameOverObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6234032997137967035, guid: b522beff92c2c1644878086af63513c1, type: 3}
       propertyPath: m_RootOrder

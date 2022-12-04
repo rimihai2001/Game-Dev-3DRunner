@@ -8,23 +8,28 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     //Varibles declared public so they can be changed from the Unity frontend instead of changing directly into the code
-    public float forwardForce = 1000f;
+    public float forwardForce = 1f;
     public float sidewayForce = 500f;
     public float jumpForce = 100f;
 
     //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = false;
 
-    //Update function that is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //If the game has started
         if (PlayerManager.gameStart == true)
         {
+            //Calculate the current speed
+            Vector3 forwardSpeed = transform.forward * forwardForce * Time.fixedDeltaTime /10;
             //Constant forward force activated per frame
-            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+            rb.MovePosition(rb.position + forwardSpeed);
         }
+    }
 
+    //Update function that is called once per frame
+    void Update()
+    {
         //Right force that is activated per frame when the user is pressing the "D" key
         if (Input.GetKey(KeyCode.D))
         {
