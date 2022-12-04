@@ -27,7 +27,7 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 
 [Sprint 2 (7.11.2022 - 20.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/tree/e84ec9e7804f6ef0f99982bd2473856d6cd35e97)
 
-Sprint 3 (21.11.2022 - 04.12.2022) - **In Progress**
+Sprint 3 (21.11.2022 - 04.12.2022) - **Done**
 
 
 **Sprints Activity Reports:**
