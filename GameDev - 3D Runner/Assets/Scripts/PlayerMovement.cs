@@ -18,8 +18,12 @@ public class PlayerMovement : MonoBehaviour
     //Update function that is called once per frame
     void Update()
     {
-        //Constant forward force activated per frame
-        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        //If the game has started
+        if (PlayerManager.gameStart == true)
+        {
+            //Constant forward force activated per frame
+            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        }
 
         //Right force that is activated per frame when the user is pressing the "D" key
         if (Input.GetKey(KeyCode.D))
@@ -41,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             playerOnGround = false;
             checkGameStart();
-            //Debug.Log("NOT ON ground");
         }
 
 
@@ -54,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerOnGround = true;
-            //Debug.Log("On ground");
         }
     }
 
