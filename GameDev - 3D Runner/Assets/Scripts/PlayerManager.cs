@@ -20,6 +20,8 @@ public class PlayerManager : MonoBehaviour
         gameOver = false;
         // Initializing the bool variable with false
         gameStart = false;
+        // Setting the time equal to 1 for when scenes are loaded (at Start or Replay)
+        Time.timeScale = 1;
     }
 
 //     // Update is called once per frame
