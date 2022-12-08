@@ -29,6 +29,10 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 
 [Sprint 3 (21.11.2022 - 04.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/tree/8ca1207b157d788ea60556ecf069c491f1908697)
 
+Sprint 4 (05.12.2022 - 18.12.2022) In Progress
+
+
+
 
 **Sprints Activity Reports:**
 
@@ -36,7 +40,9 @@ Developed by Team No. 3 for the Introduction in Game Development Course.
 
 [Sprint 2 (7.11.2022 - 20.11.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Echipa%203%20-%20Raport%20Obiective%20Indeplinite%20-%20%20Sprint%202.pdf)
 
-Sprint 3 (21.11.2022 - 04.12.2022) - **In Progress**
+[Sprint 3 (21.11.2022 - 04.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Raport%20Obiective%20Indeplinite%20-%20Sprint%203.pdf)
+
+Sprint 4 (05.12.2022 - 18.12.2022) In Progress
 
 
 
