@@ -14,7 +14,7 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         //Every 100 distance on the Z axes increases the current year from the score
-        scoreValue = 100 + (int)player.position.z / 100;
+        scoreValue = 100 + (int)player.position.z / 10;
         //ToString("0") method is used to only take the integer out from the number
         if(PlayerManager.gameOver == false)
         { 
