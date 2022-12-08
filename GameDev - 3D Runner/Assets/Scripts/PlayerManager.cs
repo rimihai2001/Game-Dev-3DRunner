@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         // If the game is over (true) the time stops and the GameOverPanel becomes active
-        if(gameOver)
+        if (gameOver)
         {
             Time.timeScale = 0;
             gameOverPanel.SetActive(true);
