@@ -12,18 +12,23 @@ public class PlayerMovement : MonoBehaviour
     public float sidewayForce = 500f;
     public float jumpForce = 100f;
 
+    private float gainSpeed = 0;
     //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = false;
 
     void FixedUpdate()
     {
+
         //If the game has started
         if (PlayerManager.gameStart == true)
         {
             //Calculate the current speed
-            Vector3 forwardSpeed = transform.forward * forwardForce * Time.fixedDeltaTime /10;
+            Vector3 forwardSpeed = transform.forward * (forwardForce + gainSpeed / 1000) * Time.fixedDeltaTime / 10 ;
             //Constant forward force activated per frame
             rb.MovePosition(rb.position + forwardSpeed);
+            //The speed increases by 0.001
+            gainSpeed += 1;
+            //Debug.Log(forwardForce + gainSpeed);
         }
     }
 
