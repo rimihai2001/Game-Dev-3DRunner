@@ -14,7 +14,7 @@ public class TileManager : MonoBehaviour
     public float tileLength = 200;
 
     //The number of prefab tiles
-    public int numberOfTiles = 2;
+    public int numberOfTiles = 7;
 
     //List that contains the tiles that are being shown in the game
     private List<GameObject> activeTiles = new List<GameObject>();
