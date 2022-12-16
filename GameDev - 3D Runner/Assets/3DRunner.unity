@@ -1453,7 +1453,7 @@ MonoBehaviour:
   rb: {fileID: 1857859496}
   forwardForce: 500
   sidewayForce: 500
-  jumpForce: 10
+  jumpForce: 12
 --- !u!114 &1857859498
 MonoBehaviour:
   m_ObjectHideFlags: 0

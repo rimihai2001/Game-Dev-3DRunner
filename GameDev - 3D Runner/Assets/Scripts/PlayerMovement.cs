@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public float sidewayForce = 500f;
     public float jumpForce = 100f;
 
+    //The current lane of the player
+    private int currentLane = 2;
+    //Cooldown between left-right moves
+    private int cooldown = 0;
+
     private float gainSpeed = 0;
     //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = false;
@@ -35,19 +40,34 @@ public class PlayerMovement : MonoBehaviour
     //Update function that is called once per frame
     void Update()
     {
+        if (cooldown > 0)
+            cooldown--;
         //Right force that is activated per frame when the user is pressing the "D" key
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && currentLane < 3 && cooldown == 0)
         {
-            rb.AddForce(sidewayForce * Time.deltaTime, 0, 0);
+            if (PlayerManager.gameStart == true)
+            {
+                rb.MovePosition(rb.position + Vector3.right * 11);
+                cooldown = 3;
+                currentLane++;
+            }
             checkGameStart();
+
         }
 
         //Left force that is activated per frame when the user is pressing the "A" key
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && currentLane > 1 && cooldown == 0)
         {
-            rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0);
+            if (PlayerManager.gameStart == true)
+            {
+                rb.MovePosition(rb.position + Vector3.left * 11);
+                cooldown = 3;
+                currentLane--;
+            }
             checkGameStart();
+
         }
+
 
         //Jump activated by "W" or"SPACE" key if the player is on the ground
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("w")) && playerOnGround)
