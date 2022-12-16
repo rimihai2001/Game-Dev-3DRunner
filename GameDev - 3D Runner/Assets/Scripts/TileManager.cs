@@ -36,7 +36,7 @@ public class TileManager : MonoBehaviour
         if (PlayerTransform.position.z - 50 > zSpawn - (numberOfTiles *  tileLength))
         {
             //Spawns the next tile
-            SpawnTile(Random.Range(0, tilePrefabs.Length));
+            SpawnTile(Random.Range(1, tilePrefabs.Length));
             //Deletes the last used tile
             DeleteTile();
         }
