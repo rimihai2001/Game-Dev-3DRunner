@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 1f;
     public float sidewayForce = 500f;
     public float jumpForce = 100f;
+    public float jumpHeight = 2f;
+    public float gravity = 3f;
 
     //The current lane of the player
     private int currentLane = 2;
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        rb.AddForce(Physics.gravity * (gravity - 1) * rb.mass);
         //If the game has started
         if (PlayerManager.gameStart == true)
         {
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump activated by "W" or"SPACE" key if the player is on the ground
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && playerOnGround)
         {
-            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
             playerOnGround = false;
             checkGameStart();
         }
