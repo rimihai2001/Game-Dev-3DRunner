@@ -28,12 +28,14 @@ public class TileManager : MonoBehaviour
         //We spawn two empty tiles in order to start the game smooth
         SpawnTile(0);
         SpawnTile(0);
+        SpawnTile(0);
+        SpawnTile(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerTransform.position.z - 50 > zSpawn - (numberOfTiles *  tileLength))
+        if (PlayerTransform.position.z > zSpawn - (numberOfTiles *  tileLength))
         {
             //Spawns the next tile
             SpawnTile(Random.Range(1, tilePrefabs.Length));
