@@ -1554,8 +1554,8 @@ MonoBehaviour:
   forwardForce: 500
   sidewayForce: 500
   jumpForce: 15
-  jumpHeight: 20
-  gravity: 3
+  jumpHeight: 25
+  gravity: 5
 --- !u!114 &1857859498
 MonoBehaviour:
   m_ObjectHideFlags: 0
