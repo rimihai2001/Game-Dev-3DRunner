@@ -9,12 +9,15 @@ public class ScoreScript : MonoBehaviour
     public Text scoreText;
     //Variable to store the current score value
     private int scoreValue;
+    //Variable to store the static value of the score
+    public static int scoreValueStatic;
 
     //Function that updates the score regarding to the Z position of the player
     void Update()
     {
         //Every 100 distance on the Z axes increases the current year from the score
         scoreValue = 100 + (int)player.position.z / 10;
+        scoreValueStatic = scoreValue;
         //ToString("0") method is used to only take the integer out from the number
         if(PlayerManager.gameOver == false)
         { 
