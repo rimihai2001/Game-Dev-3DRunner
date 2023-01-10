@@ -33,16 +33,24 @@ public class PlayerManager : MonoBehaviour
         if (gameOver && showGameOverScreen)
         {
             showGameOverScreen = false;
-            Time.timeScale = 0;
-            gameOverPanel.SetActive(true);
-            int finalScore = ScoreScript.scoreValueStatic;
-            LeaderboardPlayerNameInputWindow.Show(finalScore, (string name) => { Debug.Log(name); });
-            
+            whenGameIsOver();
+
+
         }
         // If the game started (true) the time stops and the GameOverPanel becomes active
         if(gameStart)
         {
             gameStartPanel.SetActive(false);
         }
+    }
+
+    public void whenGameIsOver()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        int finalScore = ScoreScript.scoreValueStatic;
+        LeaderboardPlayerNameInputWindow.Show(finalScore, (string name) => {
+            LeaderboardTable.AddLeaderboardEntry(finalScore, name);
+        });
     }
 }

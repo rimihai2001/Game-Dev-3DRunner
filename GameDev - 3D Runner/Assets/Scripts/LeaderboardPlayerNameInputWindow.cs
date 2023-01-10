@@ -18,22 +18,24 @@ public class LeaderboardPlayerNameInputWindow : MonoBehaviour
     {
         instance = this;
 
-        nameText = transform.Find("NameInputText").GetComponent<Text>();
+        //nameText = transform.Find("NameInputText").GetComponent<Text>();
         yearReachedText = transform.Find("YearReached").GetComponent<Text>();
         playerNameField = transform.Find("NameInputText").GetComponent<InputField>();
         playerNameField.onValidateInput = (string text, int charIndex, char addedChar) => addedChar.ToString().ToUpper()[0];
         gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(nameText.text.Length >= 3) {
-            onNameSubmitted(nameText.text);
-            gameObject.SetActive(false);
-        }
+        //if (playerNameField.text.Length >= 3)
+        //{
+        //    onNameSubmitted(playerNameField.text);
+        //    gameObject.SetActive(false);
+        //}
     }
-     
+
     public static void Show(int yearReached, Action<string> onNameSubmitted)
     {
         instance.gameObject.SetActive(true);
@@ -42,5 +44,15 @@ public class LeaderboardPlayerNameInputWindow : MonoBehaviour
         instance.playerNameField.text = "";
         instance.playerNameField.Select();
         instance.playerNameField.ActivateInputField();
+
+    }
+
+    public void checkInput()
+    {
+        if (playerNameField.text.Length >= 3)
+        {
+            onNameSubmitted(playerNameField.text);
+            gameObject.SetActive(false);
+        }
     }
 }
