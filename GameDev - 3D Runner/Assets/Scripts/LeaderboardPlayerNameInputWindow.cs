@@ -19,7 +19,7 @@ public class LeaderboardPlayerNameInputWindow : MonoBehaviour
         instance = this;
 
         nameText = transform.Find("NameInputText").GetComponent<Text>();
-        yearReachedText = transform.Find("YearReachedText").GetComponent<Text>();
+        yearReachedText = transform.Find("YearReached").GetComponent<Text>();
         playerNameField = transform.Find("NameInputText").GetComponent<InputField>();
         playerNameField.onValidateInput = (string text, int charIndex, char addedChar) => addedChar.ToString().ToUpper()[0];
         gameObject.SetActive(false);
