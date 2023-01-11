@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     // Variable used for the GameStartPanel
     public GameObject gameStartPanel;
 
+    public bool showGameOverScreen = true;
+
     void Start()
     {
         // Initializing the bool variable with false
@@ -23,20 +25,32 @@ public class PlayerManager : MonoBehaviour
         // Setting the time equal to 1 for when scenes are loaded (at Start or Replay)
         Time.timeScale = 1;
     }
-
+ 
 //     // Update is called once per frame
     void Update()
     {
         // If the game is over (true) the time stops and the GameOverPanel becomes active
-        if (gameOver)
+        if (gameOver && showGameOverScreen)
         {
-            Time.timeScale = 0;
-            gameOverPanel.SetActive(true);
+            showGameOverScreen = false;
+            whenGameIsOver();
+
+
         }
         // If the game started (true) the time stops and the GameOverPanel becomes active
         if(gameStart)
         {
             gameStartPanel.SetActive(false);
         }
+    }
+
+    public void whenGameIsOver()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        int finalScore = ScoreScript.scoreValueStatic;
+        LeaderboardPlayerNameInputWindow.Show(finalScore, (string name) => {
+            LeaderboardTable.AddLeaderboardEntry(finalScore, name);
+        });
     }
 }
