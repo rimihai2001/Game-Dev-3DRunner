@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     //Bool variable that says if the player is or is not touching the ground surface
     private bool playerOnGround = false;
 
+    public AudioSource jumpSound;
+
     void Start()
     {
         xPosition = rb.position.x;
@@ -50,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump activated by "W" or"SPACE" key if the player is on the ground
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && playerOnGround)
         {
+            jumpSound.Play();
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
             playerOnGround = false;
             checkGameStart();

@@ -7,6 +7,10 @@ public class PlayerCollision : MonoBehaviour
     //Variable to link the script to the position of the player
     public Transform player;
 
+    public AudioSource deathSound;
+    public AudioSource BGMusic;
+
+
     void FixedUpdate()
     {
         if (player.position.y < -10)
@@ -25,10 +29,11 @@ public class PlayerCollision : MonoBehaviour
         //If statement that disables the movement and stops the game if the player collides into a "GameOverObstacle" tag object
         if (collisionInfo.gameObject.tag == "GameOverObstacle")
         {
+            BGMusic.Stop();
+            deathSound.Play();
             pm.enabled = false;
             // change value of gameOver bool to True in order for the GameOverPanel to be visible
             PlayerManager.gameOver = true;
-            // Debug.Log("GAME OVER!");
         }
     }
 }
