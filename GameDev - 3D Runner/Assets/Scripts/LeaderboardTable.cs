@@ -56,6 +56,7 @@ public class LeaderboardTable : MonoBehaviour
     {
         if (needRefresh)
         {
+            needRefresh = false;
             RefreshUI();
         }
     }
@@ -100,7 +101,7 @@ public class LeaderboardTable : MonoBehaviour
     private static Leaderboard Load()
     {
         string jsonString = PlayerPrefs.GetString("LeaderboardTable");
-        if (jsonString != null)
+        if (JsonUtility.FromJson<Leaderboard>(jsonString) != null)
         {
             return JsonUtility.FromJson<Leaderboard>(jsonString);
         }
