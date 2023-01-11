@@ -8,6 +8,8 @@ public class PlayerCollision : MonoBehaviour
     public Transform player;
 
     public AudioSource deathSound;
+    public AudioSource BGMusic;
+
 
     void FixedUpdate()
     {
@@ -27,6 +29,7 @@ public class PlayerCollision : MonoBehaviour
         //If statement that disables the movement and stops the game if the player collides into a "GameOverObstacle" tag object
         if (collisionInfo.gameObject.tag == "GameOverObstacle")
         {
+            BGMusic.Stop();
             deathSound.Play();
             pm.enabled = false;
             // change value of gameOver bool to True in order for the GameOverPanel to be visible
