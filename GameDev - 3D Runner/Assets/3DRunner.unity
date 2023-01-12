@@ -5199,6 +5199,7 @@ MonoBehaviour:
   player: {fileID: 1857859495}
   deathSound: {fileID: 26778088}
   BGMusic: {fileID: 494735846}
+  testMode: 0
 --- !u!1 &1864229266
 GameObject:
   m_ObjectHideFlags: 0
