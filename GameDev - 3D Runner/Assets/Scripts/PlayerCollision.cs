@@ -10,8 +10,10 @@ public class PlayerCollision : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource BGMusic;
 
+    public GameObject testModePanel;
+
     //God Mode for testing
-    public bool testMode = false;
+    private bool testMode = false;
 
     void FixedUpdate()
     {
@@ -25,17 +27,21 @@ public class PlayerCollision : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0) && testMode == false)
+        if (Input.GetKeyDown(KeyCode.Equals) && Input.GetKeyDown(KeyCode.Minus) && PlayerManager.gameOver == false)
         {
-            testMode = true;
-          
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha9) && testMode == true)
-        {
-            testMode = false;
+            if(!testMode)
+            {
+                testMode = true;
+                testModePanel.SetActive(true);
+            }
+            else
+            {
+                testMode = false;
+                testModePanel.SetActive(false);
+            }
             
         }
+
     }
 
 
@@ -45,7 +51,7 @@ public class PlayerCollision : MonoBehaviour
         if(!testMode)
         {
             //If statement that disables the movement and stops the game if the player collides into a "GameOverObstacle" tag object
-            if (collisionInfo.gameObject.tag == "GameOverObstacle" && testMode == false)
+            if (collisionInfo.gameObject.tag == "GameOverObstacle")
             {
                 BGMusic.Stop();
                 deathSound.Play();
