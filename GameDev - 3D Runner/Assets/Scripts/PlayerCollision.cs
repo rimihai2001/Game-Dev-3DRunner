@@ -13,7 +13,6 @@ public class PlayerCollision : MonoBehaviour
     //God Mode for testing
     public bool testMode = false;
 
-
     void FixedUpdate()
     {
         if (player.position.y < -10)
@@ -21,7 +20,6 @@ public class PlayerCollision : MonoBehaviour
             pm.enabled = false;
             // change value of gameOver bool to True in order for the GameOverPanel to be visible
             PlayerManager.gameOver = true;
-            // Debug.Log("GAME OVER!");
         }
     }
 
@@ -30,6 +28,7 @@ public class PlayerCollision : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0) && testMode == false)
         {
             testMode = true;
+          
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha9) && testMode == true)
