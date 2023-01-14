@@ -29,11 +29,7 @@ public class LeaderboardPlayerNameInputWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (playerNameField.text.Length >= 3)
-        //{
-        //    onNameSubmitted(playerNameField.text);
-        //    gameObject.SetActive(false);
-        //}
+
     }
 
     public static void Show(int yearReached, Action<string> onNameSubmitted)
@@ -49,7 +45,7 @@ public class LeaderboardPlayerNameInputWindow : MonoBehaviour
 
     public void checkInput()
     {
-        if (playerNameField.text.Length >= 3)
+        if (playerNameField.text.Length <= 5 && Input.GetKeyDown(KeyCode.Return))
         {
             onNameSubmitted(playerNameField.text);
             gameObject.SetActive(false);
