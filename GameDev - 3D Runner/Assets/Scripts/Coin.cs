@@ -11,7 +11,6 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,9 +20,9 @@ public class Coin : MonoBehaviour
         transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-
+       
         // Check that the object we collided with is the player
         // if the object we collided with is not the player, we exit the function
         if (other.gameObject.name != "Player")
@@ -33,13 +32,12 @@ public class Coin : MonoBehaviour
         else
         {
             Destroy(gameObject);
+
+            // Add to the player's score
+            ScoreScript.inst.collectiblesBonus += 10;
         }
-
-        // Add to the player's score
-        ScoreScript.inst.collectiblesBonus += 100;
-
         // Destroy the coin object
         Destroy(gameObject);
-        Debug.Log(other.gameObject.name);
+        
     }
 }

@@ -32,8 +32,8 @@ public class TileManager : MonoBehaviour
         SpawnTile(0);
         SpawnTile(0);
         SpawnTile(0);
-        SpawnCoins();
         SpawnTile(1);
+        SpawnCoins();
         
     }
 
@@ -54,6 +54,7 @@ public class TileManager : MonoBehaviour
     {
         GameObject newTile = Instantiate(tilePrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
         activeTiles.Add(newTile);
+        SpawnCoins();
         zSpawn += tileLength;
     }
 
@@ -103,7 +104,7 @@ public class TileManager : MonoBehaviour
         // generate a point with random coordinates
         Vector3 point = new Vector3(
             x_pos,
-            3,
+            2,
             Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 1000)
             );
 
