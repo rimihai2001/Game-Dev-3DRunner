@@ -9,6 +9,13 @@ public class PlayerCollision : MonoBehaviour
 
     public AudioSource deathSound;
     public AudioSource BGMusic;
+    public AudioSource coinSound;
+
+    public GameObject testModePanel;
+
+    //God Mode for testing
+    private bool testMode = false;
+
 
 
     void FixedUpdate()
@@ -22,18 +29,49 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Equals) && Input.GetKeyDown(KeyCode.Minus) && PlayerManager.gameOver == false)
+        {
+            if (!testMode)
+            {
+                testMode = true;
+                testModePanel.SetActive(true);
+            }
+            else
+            {
+                testMode = false;
+                testModePanel.SetActive(false);
+            }
+
+        }
+
+    }
+
 
     //Function that detects when the player enter in a collision with an obstacle
     void OnCollisionEnter(Collision collisionInfo)
     {
-        //If statement that disables the movement and stops the game if the player collides into a "GameOverObstacle" tag object
-        if (collisionInfo.gameObject.tag == "GameOverObstacle")
+        if (!testMode)
         {
-            BGMusic.Stop();
-            deathSound.Play();
-            pm.enabled = false;
-            // change value of gameOver bool to True in order for the GameOverPanel to be visible
-            PlayerManager.gameOver = true;
+            //If statement that disables the movement and stops the game if the player collides into a "GameOverObstacle" tag object
+            if (collisionInfo.gameObject.tag == "GameOverObstacle")
+            {
+                BGMusic.Stop();
+                deathSound.Play();
+                pm.enabled = false;
+                // change value of gameOver bool to True in order for the GameOverPanel to be visible
+                PlayerManager.gameOver = true;
+            }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "GoldCoin")
+        {
+            coinSound.Play();
+         }
+
     }
 }
