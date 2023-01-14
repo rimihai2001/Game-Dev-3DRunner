@@ -5,12 +5,12 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public float turnSpeed = 90f;
-
    
 
     // Start is called before the first frame update
     void Start()
     {
+ 
     }
 
     // Update is called once per frame
@@ -22,22 +22,23 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
+        if (other.gameObject.tag == "GameOverObstacle")
+        {
+            Destroy(gameObject);
+            return;
+        }
         // Check that the object we collided with is the player
         // if the object we collided with is not the player, we exit the function
         if (other.gameObject.name != "Player")
         {
             return;
         }
-        else
-        {
-            Destroy(gameObject);
-
-            // Add to the player's score
-            ScoreScript.inst.collectiblesBonus += 10;
-        }
-        // Destroy the coin object
+       
+        //Destroy coin
         Destroy(gameObject);
+
+        // Add to the player's score
+        ScoreScript.inst.collectiblesBonus += 10;
         
     }
 }
