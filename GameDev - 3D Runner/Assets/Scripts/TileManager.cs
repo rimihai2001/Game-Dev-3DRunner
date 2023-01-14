@@ -120,8 +120,6 @@ public class TileManager : MonoBehaviour
     {
         int coinsToSpawn = Random.Range(0, 2);
 
-        Debug.Log(coinsToSpawn);
-
         if(coinsToSpawn == 1)
         {
             // save the object we spawned
