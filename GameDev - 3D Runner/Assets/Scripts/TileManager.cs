@@ -19,11 +19,18 @@ public class TileManager : MonoBehaviour
     //List that contains the tiles that are being shown in the game
     private List<GameObject> activeTiles = new List<GameObject>();
 
+
+    //List that contains the coins that are being shown in the game
+    private List<GameObject> activeCoins = new List<GameObject>();
+
     //Variable to link the script to the position of the player
     public Transform PlayerTransform;
 
     // Number of coins to spawn
     public GameObject coinPrefab;
+
+    //The X value of lanes
+    int[] lane_pos = new int[] { -11, 0, 11 };
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +54,25 @@ public class TileManager : MonoBehaviour
             //Deletes the last used tile
             DeleteTile();
         }
+
+        if(activeCoins.Count> 0)
+        {
+            //Debug.Log(11111);
+            if (activeCoins[0] != null)
+            {
+                if (activeCoins[0].transform.position.z < PlayerTransform.position.z)
+                {
+                    DeleteCoin();
+                }
+            }
+            else
+            {
+                activeCoins.RemoveAt(0);
+            }
+            
+        }
+
+        
     }
 
     //Function that will spawn the next tile
@@ -59,8 +85,29 @@ public class TileManager : MonoBehaviour
     }
 
     //Function to delete the last used tile in order to save memory
+    private void DeleteCoin()
+    {
+        
+        //Destroys the last coin if it was not already destroyed
+        try
+        {
+            if (activeCoins[0] != null)
+            {
+                Destroy(activeCoins[0]);
+            }
+            activeCoins.RemoveAt(0);    
+        }
+        catch
+        {
+            activeCoins.RemoveAt(0);
+        }
+        
+    }
+
+    //Function to delete the last used tile in order to save memory
     private void DeleteTile()
     {
+
         //Destroys the last tile
         Destroy(activeTiles[0]);
 
@@ -71,7 +118,7 @@ public class TileManager : MonoBehaviour
     // Function used to spawn the coins along the map
     void SpawnCoins()
     {
-        int coinsToSpawn = 10;
+        int coinsToSpawn = 2;
 
         for(int i = 0; i < coinsToSpawn; i++)
         {
@@ -80,27 +127,19 @@ public class TileManager : MonoBehaviour
 
             // set the position of the coin equal to a random point in the collider
             temp.transform.position = GetRandomPoint();
+
+            activeCoins.Add(temp);
         }
+
+        
     }
 
     // Function to generate a random position on the map to spawn the coin
     Vector3 GetRandomPoint ()
     {
         int lane = Random.Range(1, 3);
-        int x_pos;
+        int x_pos = lane_pos[lane];
 
-        if(lane == 1)
-        {
-            x_pos = -11;
-        }
-        else if(lane == 2)
-        {
-            x_pos = 0;
-        }
-        else
-        {
-            x_pos = 11;
-        }
         // generate a point with random coordinates
         Vector3 point = new Vector3(
             x_pos,
