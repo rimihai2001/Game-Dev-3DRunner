@@ -118,9 +118,11 @@ public class TileManager : MonoBehaviour
     // Function used to spawn the coins along the map
     void SpawnCoins()
     {
-        int coinsToSpawn = 2;
+        int coinsToSpawn = Random.Range(0, 2);
 
-        for(int i = 0; i < coinsToSpawn; i++)
+        Debug.Log(coinsToSpawn);
+
+        if(coinsToSpawn == 1)
         {
             // save the object we spawned
             GameObject temp = Instantiate(coinPrefab, transform);
