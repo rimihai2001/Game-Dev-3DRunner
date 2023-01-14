@@ -8,6 +8,7 @@ TagManager:
   - GameOverObstacle
   - OutOfBounds
   - InBounds
+  - GoldCoin
   layers:
   - Default
   - TransparentFX

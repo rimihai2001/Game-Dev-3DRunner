@@ -22,6 +22,9 @@ public class TileManager : MonoBehaviour
     //Variable to link the script to the position of the player
     public Transform PlayerTransform;
 
+    // Number of coins to spawn
+    public GameObject coinPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,9 @@ public class TileManager : MonoBehaviour
         SpawnTile(0);
         SpawnTile(0);
         SpawnTile(0);
+        SpawnCoins();
         SpawnTile(1);
+        
     }
 
     // Update is called once per frame
@@ -60,5 +65,48 @@ public class TileManager : MonoBehaviour
 
         //Removes the tile from the List
         activeTiles.RemoveAt(0);
+    }
+
+    // Function used to spawn the coins along the map
+    void SpawnCoins()
+    {
+        int coinsToSpawn = 10;
+
+        for(int i = 0; i < coinsToSpawn; i++)
+        {
+            // save the object we spawned
+            GameObject temp = Instantiate(coinPrefab, transform);
+
+            // set the position of the coin equal to a random point in the collider
+            temp.transform.position = GetRandomPoint();
+        }
+    }
+
+    // Function to generate a random position on the map to spawn the coin
+    Vector3 GetRandomPoint ()
+    {
+        int lane = Random.Range(1, 3);
+        int x_pos;
+
+        if(lane == 1)
+        {
+            x_pos = -11;
+        }
+        else if(lane == 2)
+        {
+            x_pos = 0;
+        }
+        else
+        {
+            x_pos = 11;
+        }
+        // generate a point with random coordinates
+        Vector3 point = new Vector3(
+            x_pos,
+            3,
+            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 1000)
+            );
+
+        return point;
     }
 }
