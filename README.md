@@ -45,7 +45,7 @@ Sprint 4 (05.12.2022 - 18.12.2022) In Progress
 
 [Sprint 3 (21.11.2022 - 04.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Raport%20Obiective%20Indeplinite%20-%20Sprint%203.pdf)
 
-Sprint 4 (05.12.2022 - 18.12.2022) In Progress
+[Sprint 4 (05.12.2022 - 18.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Raport%20Obiective%20Indeplinite%20Sprint%204.pdf)
 
 
 
