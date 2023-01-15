@@ -38,7 +38,7 @@ Jucatorul se va deplasa cu tastele WAD sau sageti pentru a se feri de obstacolel
 
 [Sprint 3 (21.11.2022 - 04.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/tree/8ca1207b157d788ea60556ecf069c491f1908697)
 
-Sprint 4 (05.12.2022 - 18.12.2022) In Progress
+[Sprint 4 (05.12.2022 - 18.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/tree/29d1e889d88aa3ff3241f7426323a23380fdafe5)
 
 
 
@@ -54,5 +54,5 @@ Sprint 4 (05.12.2022 - 18.12.2022) In Progress
 
 [Sprint 4 (05.12.2022 - 18.12.2022)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Raport%20Obiective%20Indeplinite%20Sprint%204.pdf)
 
-
+[Sprint 5 (19.12.2022 - 15.01.2023)](https://github.com/rimihai2001/Game-Dev-3DRunner/blob/main/Activity%20Reports/Raport%20Obiective%20Indeplinite%20-%20Sprint%205.pdf)
 
