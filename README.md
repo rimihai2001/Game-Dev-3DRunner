@@ -2,6 +2,13 @@
 
 Developed by Team No. 3 for the Introduction in Game Development Course.
 
+“Race Against Time” este un endless runner 3D ce porneste de la o poveste a calatoriei in viitor. Cu ajutorul unei masini a timpului, jucatorul doreste sa ajunga in anul 2100, doar ca, din motive necunoscute, ajunge in anul 100 si incepe o misiune aproape imposibila de a reveni in prezent si, daca este posibil, chiar si mai departe in viitor.
+
+Scorul este dat de distanta parcursa de jucator, in timp ce monedele il vor ajuta sa avanseze mai repede in timp. Jucatorul are, ca in viata de zi cu zi, o singura sansa, iar moartea este ireversibila.
+
+Jucatorul se va deplasa cu tastele WAD sau sageti pentru a se feri de obstacolele pe care le gaseste in diferite epoci ale istoriei. Din cauza faptului ca masina timpului este stricata, jucatorul trece prin diversele epoci, fara a pastra ordinea acestora in istorie.
+
+
 **Objectives:**
 
 [Trello Project Board](https://trello.com/b/WVgVTL46/race-against-time)
