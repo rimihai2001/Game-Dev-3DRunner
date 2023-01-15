@@ -26,7 +26,7 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
         //Every 100 distance on the Z axes increases the current year from the score, on which we add the collectibles score
-        scoreValue = 100 + (int)player.position.z / 10 + collectiblesBonus;
+        scoreValue = 100 + (int)player.position.z / 5 + collectiblesBonus;
         scoreValueStatic = scoreValue;
 
         //Different text if it's game over or not

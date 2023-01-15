@@ -36,7 +36,7 @@ public class Coin : MonoBehaviour
         Destroy(gameObject);
 
         // Add to the player's score
-        ScoreScript.inst.collectiblesBonus += 10;
+        ScoreScript.inst.collectiblesBonus += 25;
         
     }
 }
