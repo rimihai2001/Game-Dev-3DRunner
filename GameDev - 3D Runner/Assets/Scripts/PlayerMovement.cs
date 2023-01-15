@@ -50,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
     //Update function that is called once per frame
     void Update()
     {
-        // Jump activated by "W" or "SPACE" key if the player is on the ground
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && playerOnGround)
+        // Jump activated by "W", left arrow or "SPACE" key if the player is on the ground
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && playerOnGround)
         {
             // play the JUMP sound
             jumpSound.Play();
@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
         pos.x = Mathf.MoveTowards(pos.x, xPosition, sidewayForce * Time.deltaTime);
         rb.position = pos;
 
-        //Right force that is activated per frame when the user is pressing the "D" key
-        if (Input.GetKeyDown(KeyCode.D) && currentLane < 3)
+        // When pressing D or right arrow key the player moves to the next lane on the right if possible
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && currentLane < 3)
         {
             //If the game has started
             if (PlayerManager.gameStart == true)
@@ -81,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
             // if the players press D while they are in the main menu => the game will start
             checkGameStart();
         }
-        //Left force that is activated per frame when the user is pressing the "A" key
-        if (Input.GetKeyDown(KeyCode.A) && currentLane > 1)
+        //When pressing A or left arrow key the player moves to the next lane on the left if possible
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLane > 1)
         {
             //If the game has started
             if (PlayerManager.gameStart == true)
