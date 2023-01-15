@@ -40,7 +40,6 @@ public class TileManager : MonoBehaviour
         SpawnTile(0);
         SpawnTile(0);
         SpawnTile(1);
-        SpawnCoins();
         
     }
 
@@ -159,10 +158,13 @@ public class TileManager : MonoBehaviour
         // generate a point with random coordinates
         Vector3 point = new Vector3(
             x_pos,
-            Random.Range(2, 6),
-            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 1000)
-            );
-
+            Random.Range(2, 10),
+            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 400)
+            ); ;
+        if(point.z < 400)
+        {
+            point.z = point.z / 10 + 400;
+        }
         return point;
     }
 }
