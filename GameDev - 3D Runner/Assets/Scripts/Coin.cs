@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    //Rotation speed
     public float turnSpeed = 90f;
-   
-
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
+  
 
     // Update is called once per frame
     void Update()
@@ -22,11 +17,13 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //If the coin spawns inside an obstacle, the obstacle is destroyed
         if (other.gameObject.tag == "GameOverObstacle")
         {
             Destroy(gameObject);
             return;
         }
+
         // Check that the object we collided with is the player
         // if the object we collided with is not the player, we exit the function
         if (other.gameObject.name != "Player")
@@ -34,6 +31,7 @@ public class Coin : MonoBehaviour
             return;
         }
        
+        //If the player hits the coin
         //Destroy coin
         Destroy(gameObject);
 

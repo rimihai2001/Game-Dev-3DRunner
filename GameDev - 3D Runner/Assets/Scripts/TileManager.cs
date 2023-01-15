@@ -40,13 +40,13 @@ public class TileManager : MonoBehaviour
         SpawnTile(0);
         SpawnTile(0);
         SpawnTile(1);
-        SpawnCoins();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (PlayerTransform.position.z > zSpawn - (numberOfTiles *  tileLength))
         {
             //Spawns the next tile
@@ -55,11 +55,13 @@ public class TileManager : MonoBehaviour
             DeleteTile();
         }
 
+        //If there are active coins in the game
         if(activeCoins.Count> 0)
         {
-            //Debug.Log(11111);
+            //If the coin has not been destroyed before
             if (activeCoins[0] != null)
             {
+                //If the position of the coin is behind the current position of the player
                 if (activeCoins[0].transform.position.z < PlayerTransform.position.z)
                 {
                     DeleteCoin();
@@ -67,6 +69,7 @@ public class TileManager : MonoBehaviour
             }
             else
             {
+                //If the coin is already destroyed, just remove it from the list
                 activeCoins.RemoveAt(0);
             }
             
@@ -78,9 +81,13 @@ public class TileManager : MonoBehaviour
     //Function that will spawn the next tile
     public void SpawnTile(int tileIndex)
     {
+        //Create e new tile after the last one
         GameObject newTile = Instantiate(tilePrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+        //Add the tile in the list
         activeTiles.Add(newTile);
+        //SpawnCoins on the next tile
         SpawnCoins();
+        //Update the zSpawn variable with the position of the last tile
         zSpawn += tileLength;
     }
 
@@ -91,14 +98,18 @@ public class TileManager : MonoBehaviour
         //Destroys the last coin if it was not already destroyed
         try
         {
+            //If the coin was active
             if (activeCoins[0] != null)
             {
+                //Destroy the coin
                 Destroy(activeCoins[0]);
             }
+            //Remove the coin from the list
             activeCoins.RemoveAt(0);    
         }
         catch
         {
+            //Remove the coin from the list
             activeCoins.RemoveAt(0);
         }
         
@@ -118,8 +129,10 @@ public class TileManager : MonoBehaviour
     // Function used to spawn the coins along the map
     void SpawnCoins()
     {
+        //Varible to know if a coin will spawn on the tile or not
         int coinsToSpawn = Random.Range(0, 2);
 
+        //If the variable is 1, one coin will spawn, otherwise no coins will spawn
         if(coinsToSpawn == 1)
         {
             // save the object we spawned
@@ -128,6 +141,7 @@ public class TileManager : MonoBehaviour
             // set the position of the coin equal to a random point in the collider
             temp.transform.position = GetRandomPoint();
 
+            //Add the coin to the list
             activeCoins.Add(temp);
         }
 
@@ -137,16 +151,20 @@ public class TileManager : MonoBehaviour
     // Function to generate a random position on the map to spawn the coin
     Vector3 GetRandomPoint ()
     {
+        //The lane where the coin will spawn will be randomly selected
         int lane = Random.Range(1, 3);
         int x_pos = lane_pos[lane];
 
         // generate a point with random coordinates
         Vector3 point = new Vector3(
             x_pos,
-            2,
-            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 1000)
-            );
-
+            Random.Range(2, 10),
+            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 400)
+            ); ;
+        if(point.z < 400)
+        {
+            point.z = point.z / 10 + 400;
+        }
         return point;
     }
 }
