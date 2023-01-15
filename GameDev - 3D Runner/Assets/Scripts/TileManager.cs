@@ -38,7 +38,6 @@ public class TileManager : MonoBehaviour
         //We spawn two empty tiles in order to start the game smooth
         SpawnTile(0);
         SpawnTile(0);
-        SpawnTile(0);
         SpawnTile(1);
         
     }
@@ -159,13 +158,13 @@ public class TileManager : MonoBehaviour
         Vector3 point = new Vector3(
             x_pos,
             Random.Range(2, 10),
-            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 400)
+            Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 200)
             );
 
         //Block coins from spawning on the first running tiles (Tile 0)
         if(point.z < 400)
         {
-            point.z = point.z / 10 + 400;
+            point.z = point.z / 10 + 200;
         }
         return point;
     }
