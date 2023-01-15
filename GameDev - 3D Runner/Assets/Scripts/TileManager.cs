@@ -160,7 +160,9 @@ public class TileManager : MonoBehaviour
             x_pos,
             Random.Range(2, 10),
             Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 400)
-            ); ;
+            );
+
+        //Block coins from spawning on the first running tiles (Tile 0)
         if(point.z < 400)
         {
             point.z = point.z / 10 + 400;
