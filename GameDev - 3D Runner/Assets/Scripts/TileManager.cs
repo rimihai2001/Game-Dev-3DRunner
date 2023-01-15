@@ -159,7 +159,7 @@ public class TileManager : MonoBehaviour
         // generate a point with random coordinates
         Vector3 point = new Vector3(
             x_pos,
-            2,
+            Random.Range(2, 6),
             Random.Range(PlayerTransform.position.z + 100, (PlayerTransform.position.z + 200) + 1000)
             );
 
